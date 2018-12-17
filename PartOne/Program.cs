@@ -13,8 +13,6 @@ namespace PartOne
             Male
         }
 
-        //public readonly int MinimumAgeForRetirement;
-
         static void Main(string[] args)
         {
 
@@ -40,20 +38,50 @@ namespace PartOne
             string letterTyped = Console.ReadLine().ToUpper().Trim();
             Console.WriteLine("You typed : {0}", letterTyped);
 
+
             //Gender gender = Gender.Female;
             Gender? gender = null;
-   
+            int MinimumAgeForRetirement = 0;
+
             switch (letterTyped)
             {
                 case "M":
                     gender = Gender.Male;
+                    MinimumAgeForRetirement = (gender == Gender.Male ? 65 : 63);
                     Console.WriteLine("Your gender : {0}", gender);
+                    if (age < 65)
+                    {
+                        Console.WriteLine("You will retire at {0} years old", MinimumAgeForRetirement);
+                    }
+                    else
+
+                    if(age > 65)
+                    {
+                        Console.WriteLine("You retired at {0} years old", MinimumAgeForRetirement);
+                        
+                    }
                     Console.ReadLine();
                     break;
+
                 case "F":
                     gender = Gender.Female;
+                    MinimumAgeForRetirement = (gender == Gender.Female ? 63 : 65);
                     Console.WriteLine("Your gender : {0}", gender);
-                    Console.ReadLine();
+                    if (age < 63)
+                    {
+                        Console.WriteLine("You will retire at {0} years old", MinimumAgeForRetirement);
+                        Console.ReadLine();
+                    }
+
+                    else
+
+                    if (age > 63)
+                    {
+                        Console.WriteLine("You retired at {0} years old", MinimumAgeForRetirement);
+                        Console.ReadLine();
+
+                    }
+                    
                     break;
                 default:
                     Console.WriteLine("The typed value is incorrect");
@@ -62,6 +90,13 @@ namespace PartOne
 
             }
 
+
+
+
+
         }
     }
 }
+
+
+//If there’s a valid Gender, then display a message if the person is retired or at what age he/she will retire(Female at 63, Male at 65) 
