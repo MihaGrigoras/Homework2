@@ -13,7 +13,8 @@ namespace PartOne
             Male
         }
 
-        protected Gender gender;
+        //public readonly int MinimumAgeForRetirement;
+
         static void Main(string[] args)
         {
 
@@ -37,24 +38,30 @@ namespace PartOne
 
             //Colect the gender of the user
             Console.Write("Please enter your gender (m/f): ");
-            string gender= Console.ReadLine().ToLower().Trim();
+
+            string genderTyped = Console.ReadLine().ToLower().Trim();
 
             Gender gender = Gender.Female;
-            switch (gender)
+
+
+            switch (genderTyped)
             {
                 case "f":
                     gender = Gender.Female;
-                    Console.WriteLine("Female");
+                    Console.WriteLine("Gender : Female");
                     Console.ReadLine();
                     break;
                 case "m":
                     gender = Gender.Male;
-                    Console.WriteLine("Male");
+                    Console.WriteLine("Gender : Male");
                     Console.ReadLine();
                     break;
 
 
+
             }
+
+
 
         }
     }
